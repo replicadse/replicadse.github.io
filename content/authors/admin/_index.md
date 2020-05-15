@@ -33,7 +33,7 @@ education:
     year: 2020
   - course: Diplom Informatik-Betriebswirt (VWA)
     institution: Verwaltungs- und Wirtschaftsakademie Leer e.V.
-    year: 2009
+    year: 2019
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
