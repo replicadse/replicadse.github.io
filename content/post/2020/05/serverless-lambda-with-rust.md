@@ -1,5 +1,5 @@
 ---
-title: "How to:  Lambda function with RUST"
+title: "How to: Lambda function with RUST"
 date: 2020-05-15
 math: true
 diagram: true
