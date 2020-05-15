@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Academic</title>
+    <title>Heiko A. Weber</title>
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <description>Academic</description>
+    <description>Heiko A. Weber</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Academic</title>
+      <title>Heiko A. Weber</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>complate</title>
+      <link>/project/complate/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>/project/complate/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Creating your website with GitHub (&#43; Pages &amp; Workflows) and Hugo</title>
@@ -40,7 +48,7 @@ cd $(github.username).github.io
 git init
 
 # create empty master branch
-git commit -m &amp;quot;init&amp;quot; --allow-empty
+git commit -m &amp;quot;init master&amp;quot; --allow-empty
 git remote add origin git@github.com:$(github.username)/$(github.username).github.io
 git push --set-upstream origin master
 
@@ -50,7 +58,7 @@ git checkout src
 hugo new site . --force
 # add master branch of current repo as submodule that live in the public/ directory
 git submodule add -b master git@github.com:$(github.username)/$(github.username).github.io public
-git push
+git add . &amp;amp;&amp;amp; git commit -m &amp;quot;init src&amp;quot; &amp;amp;&amp;amp; git push
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Make sure to replace the $(github.username) with your GitHub username. This will create an empty &lt;code&gt;master&lt;/code&gt; branch and checkout the &lt;code&gt;src&lt;/code&gt; branch locally. This is important because the &lt;code&gt;master&lt;/code&gt; branch will contain the rendered website content whereas the &lt;code&gt;src&lt;/code&gt; branch will contain the source files for Hugo.&lt;br&gt;
 The &lt;code&gt;master&lt;/code&gt; branch is added as submodule in your &lt;code&gt;src&lt;/code&gt; branch and lives in &lt;code&gt;public/&lt;/code&gt;, which is the default output directory of Hugo.&lt;/p&gt;
@@ -99,6 +107,14 @@ jobs:
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The content of that file will build a new site when the &lt;code&gt;src&lt;/code&gt; branch changes and push everything to the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>wavefront_rs</title>
+      <link>/project/wavefront_rs/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>/project/wavefront_rs/</guid>
+      <description></description>
     </item>
     
     <item>

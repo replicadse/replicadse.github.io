@@ -239,9 +239,9 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
   <meta property="twitter:site" content="@HeikoAWeber">
   <meta property="twitter:creator" content="@HeikoAWeber">
   
-  <meta property="og:site_name" content="Academic">
+  <meta property="og:site_name" content="Heiko A. Weber">
   <meta property="og:url" content="/post/2020/05/gh-pages-and-hugo/">
-  <meta property="og:title" content="Creating your website with GitHub (&#43; Pages &amp; Workflows) and Hugo | Academic">
+  <meta property="og:title" content="Creating your website with GitHub (&#43; Pages &amp; Workflows) and Hugo | Heiko A. Weber">
   <meta property="og:description" content="&#43;  Pages &#43;  Workflows &#43; Hugo == 
 GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
@@ -287,7 +287,7 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
   
   "publisher": {
     "@type": "Organization",
-    "name": "Academic",
+    "name": "Heiko A. Weber",
     "logo": {
       "@type": "ImageObject",
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
@@ -311,7 +311,7 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
 
 
 
-  <title>Creating your website with GitHub (&#43; Pages &amp; Workflows) and Hugo | Academic</title>
+  <title>Creating your website with GitHub (&#43; Pages &amp; Workflows) and Hugo | Heiko A. Weber</title>
 
 </head>
 
@@ -362,7 +362,7 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Academic</a>
+      <a class="navbar-brand" href="/">Heiko A. Weber</a>
     </div>
     
 
@@ -375,7 +375,7 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Academic</a>
+      <a class="navbar-brand" href="/">Heiko A. Weber</a>
     </div>
     
 
@@ -680,7 +680,7 @@ cd $(github.username).github.io
 git init
 
 # create empty master branch
-git commit -m &quot;init&quot; --allow-empty
+git commit -m &quot;init master&quot; --allow-empty
 git remote add origin git@github.com:$(github.username)/$(github.username).github.io
 git push --set-upstream origin master
 
@@ -690,7 +690,7 @@ git checkout src
 hugo new site . --force
 # add master branch of current repo as submodule that live in the public/ directory
 git submodule add -b master git@github.com:$(github.username)/$(github.username).github.io public
-git push
+git add . &amp;&amp; git commit -m &quot;init src&quot; &amp;&amp; git push
 </code></pre>
 <p>Make sure to replace the $(github.username) with your GitHub username. This will create an empty <code>master</code> branch and checkout the <code>src</code> branch locally. This is important because the <code>master</code> branch will contain the rendered website content whereas the <code>src</code> branch will contain the source files for Hugo.<br>
 The <code>master</code> branch is added as submodule in your <code>src</code> branch and lives in <code>public/</code>, which is the default output directory of Hugo.</p>
