@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo | Academic</title>
+    <link>/tag/hugo/</link>
+      <atom:link href="/tag/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <description>hugo</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>hugo</title>
+      <link>/tag/hugo/</link>
+    </image>
+    
+    <item>
+      <title>Creating your website with GitHub (&#43; Pages &amp; Workflows) and Hugo</title>
+      <link>/post/2020/05/gh-pages-and-hugo/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020/05/gh-pages-and-hugo/</guid>
+      <description>&lt;p&gt;
+  &lt;i class=&#34;fab fa-github  pr-1 fa-fw&#34;&gt;&lt;/i&gt; + 
+  &lt;i class=&#34;fab fa-github  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Pages + 
+  &lt;i class=&#34;fab fa-github  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Workflows + Hugo == 
+  &lt;i class=&#34;fas fa-heart  pr-1 fa-fw&#34;&gt;&lt;/i&gt;&lt;br&gt;
+&lt;br&gt;
+GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects.\&lt;/p&gt;
+&lt;h2 id=&#34;get-started-with-hugo&#34;&gt;Get started with Hugo&lt;/h2&gt;
+&lt;p&gt;Hugo is a static site generator that primarily uses markdown files to generate the content. When it comes to static site generation, Hugo is probably the best and easiest tool to use. Also, it is amazingly fast.&lt;br&gt;
+Install Hugo by using 
+&lt;a href=&#34;https://brew.sh&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;homebrew&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;brew install hugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You should at least be a bit familiar with Hugo and it&amp;rsquo;s features. I recommend using the 
+&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;quickstart&lt;/code&gt; guide on gohugo.io&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;create-a-site&#34;&gt;Create a site&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s assume that you want to create a new website for you as a person. Go to some directory your website (repository) shall live inside (I have my repos saved under &lt;code&gt;~/repos&lt;/code&gt;) and invoke:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# create directory
+mkdir $(github.username).github.io
+cd $(github.username).github.io
+git init
+
+# create empty master branch
+git commit -m &amp;quot;init&amp;quot; --allow-empty
+git remote add origin git@github.com:$(github.username)/$(github.username).github.io
+git push --set-upstream origin master
+
+# create src branch
+git checkout src
+# create new site in current directory
+hugo new site . --force
+# add master branch of current repo as submodule that live in the public/ directory
+git submodule add -b master git@github.com:$(github.username)/$(github.username).github.io public
+git push
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Make sure to replace the $(github.username) with your GitHub username. This will create an empty &lt;code&gt;master&lt;/code&gt; branch and checkout the &lt;code&gt;src&lt;/code&gt; branch locally. This is important because the &lt;code&gt;master&lt;/code&gt; branch will contain the rendered website content whereas the &lt;code&gt;src&lt;/code&gt; branch will contain the source files for Hugo.&lt;br&gt;
+The &lt;code&gt;master&lt;/code&gt; branch is added as submodule in your &lt;code&gt;src&lt;/code&gt; branch and lives in &lt;code&gt;public/&lt;/code&gt;, which is the default output directory of Hugo.&lt;/p&gt;
+&lt;h2 id=&#34;select-a-theme&#34;&gt;Select a theme&lt;/h2&gt;
+&lt;p&gt;This website was created using the 
+&lt;a href=&#34;https://themes.gohugo.io/academic/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Academic Theme&lt;/a&gt;. This requires a bit more work. In order to get started, chosse and install a theme like 
+&lt;a href=&#34;https://themes.gohugo.io/gohugo-theme-ananke/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;ananke&lt;/code&gt;&lt;/a&gt;. For installing the theme, run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
+git submodule update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This will add the theme to your &lt;code&gt;themes/&lt;/code&gt; folder. Now you only need to set the &lt;code&gt;theme&lt;/code&gt; value in your &lt;code&gt;./config.toml&lt;/code&gt; file to &lt;code&gt;ananke&lt;/code&gt; and you&amp;rsquo;re ready to go.&lt;/p&gt;
+&lt;h2 id=&#34;start-hugo&#34;&gt;Start Hugo&lt;/h2&gt;
+&lt;p&gt;You should now check whether your website does display something. Run:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo -D server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now open the url+port (usually &lt;code&gt;localhost:1313&lt;/code&gt;) and check your website. We are not 100% done yet though.&lt;/p&gt;
+&lt;h2 id=&#34;automate-build&#34;&gt;Automate build&lt;/h2&gt;
+&lt;p&gt;In order to use GitHub Workflows (Actions) to update your website, paste this into your &lt;code&gt;.github/workflows/pipeline/yml&lt;/code&gt; file:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yml&#34;&gt;name: pipeline
+on: 
+  push:
+    branches:
+    - src # only rebuild site if src branch gets changed
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@master
+        - name: Setup Hugo
+          uses: peaceiris/actions-hugo@v2.2.0
+          with:
+            hugo-version: &#39;0.68.3&#39;
+            extended: true
+        - name: Build
+          run: hugo -D
+        - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./public
+            publish_branch: master
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The content of that file will build a new site when the &lt;code&gt;src&lt;/code&gt; branch changes and push everything to the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
