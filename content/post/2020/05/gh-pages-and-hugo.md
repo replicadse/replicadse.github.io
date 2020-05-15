@@ -4,10 +4,12 @@ date: 2020-05-15
 math: true
 diagram: true
 tags: ["git", "github", "hugo", "workflows", "branches", "tutorial"]
+featured: true
+draft: false
 ---
 
 {{< icon name="github" pack="fab" >}} + {{< icon name="github" pack="fab" >}} Pages + {{< icon name="github" pack="fab" >}} Workflows + Hugo == {{< icon name="heart" pack="fas" >}}\
-\
+
 GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects.\
 
 ## Get started with Hugo
@@ -104,3 +106,8 @@ jobs:
 ```
 
 The content of that file will build a new site when the `src` branch changes and push everything to the `master` branch.
+
+## Summary
+
+In the end, this setup will work as follows:\
+You can use the `src` branch to write the content of your website. Every push to `origin` will trigger a `GitHub workflow` which then updates the `master` branch of the same repository with the rendered version of the website. Nice.
