@@ -85,12 +85,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@master
-          with:
-            submodules: true
         - name: Setup Hugo
           uses: peaceiris/actions-hugo@v2.2.0
           with:
             hugo-version: '0.68.3'
+        - name: Build
+          run: hugo -D
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
           with:
