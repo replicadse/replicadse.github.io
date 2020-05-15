@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="&#43;  Pages &#43;  Workflows &#43; Hugo == 
+  <meta name="description" content="&#43;  Pages &#43;  Workflows &#43; Hugo == \
 GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects.">
 
   
@@ -242,7 +242,7 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
   <meta property="og:site_name" content="Heiko A. Weber">
   <meta property="og:url" content="/post/2020/05/gh-pages-and-hugo/">
   <meta property="og:title" content="Creating your website with GitHub (&#43; Pages &amp; Workflows) and Hugo | Heiko A. Weber">
-  <meta property="og:description" content="&#43;  Pages &#43;  Workflows &#43; Hugo == 
+  <meta property="og:description" content="&#43;  Pages &#43;  Workflows &#43; Hugo == \
 GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
@@ -293,7 +293,7 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "+  Pages +  Workflows + Hugo == \nGitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects."
+  "description": "+  Pages +  Workflows + Hugo == \\\nGitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects."
 }
 </script>
 
@@ -661,9 +661,8 @@ GitHub offers a wide spectrum of services. This includes hosting website like th
   <i class="fab fa-github  pr-1 fa-fw"></i> + 
   <i class="fab fa-github  pr-1 fa-fw"></i> Pages + 
   <i class="fab fa-github  pr-1 fa-fw"></i> Workflows + Hugo == 
-  <i class="fas fa-heart  pr-1 fa-fw"></i><br>
-<br>
-GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects.\</p>
+  <i class="fas fa-heart  pr-1 fa-fw"></i>\</p>
+<p>GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects.\</p>
 <h2 id="get-started-with-hugo">Get started with Hugo</h2>
 <p>Hugo is a static site generator that primarily uses markdown files to generate the content. When it comes to static site generation, Hugo is probably the best and easiest tool to use. Also, it is amazingly fast.<br>
 Install Hugo by using 
@@ -738,6 +737,9 @@ jobs:
 
 </code></pre>
 <p>The content of that file will build a new site when the <code>src</code> branch changes and push everything to the <code>master</code> branch.</p>
+<h2 id="summary">Summary</h2>
+<p>In the end, this setup will work as follows:<br>
+You can use the <code>src</code> branch to write the content of your website. Every push to <code>origin</code> will trigger a <code>GitHub workflow</code> which then updates the <code>master</code> branch of the same repository with the rendered version of the website. Nice.</p>
 
     </div>
 
@@ -953,6 +955,15 @@ jobs:
 
 
   
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/post/2020/05/serverless-lambda-with-rust/">How to:  Lambda function with RUST</a></li>
+      
+    </ul>
+  </div>
   
 
 

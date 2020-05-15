@@ -21,9 +21,8 @@
   &lt;i class=&#34;fab fa-github  pr-1 fa-fw&#34;&gt;&lt;/i&gt; + 
   &lt;i class=&#34;fab fa-github  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Pages + 
   &lt;i class=&#34;fab fa-github  pr-1 fa-fw&#34;&gt;&lt;/i&gt; Workflows + Hugo == 
-  &lt;i class=&#34;fas fa-heart  pr-1 fa-fw&#34;&gt;&lt;/i&gt;&lt;br&gt;
-&lt;br&gt;
-GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects.\&lt;/p&gt;
+  &lt;i class=&#34;fas fa-heart  pr-1 fa-fw&#34;&gt;&lt;/i&gt;\&lt;/p&gt;
+&lt;p&gt;GitHub offers a wide spectrum of services. This includes hosting website like this one for users, organizations or projects.\&lt;/p&gt;
 &lt;h2 id=&#34;get-started-with-hugo&#34;&gt;Get started with Hugo&lt;/h2&gt;
 &lt;p&gt;Hugo is a static site generator that primarily uses markdown files to generate the content. When it comes to static site generation, Hugo is probably the best and easiest tool to use. Also, it is amazingly fast.&lt;br&gt;
 Install Hugo by using 
@@ -98,6 +97,26 @@ jobs:
 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The content of that file will build a new site when the &lt;code&gt;src&lt;/code&gt; branch changes and push everything to the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In the end, this setup will work as follows:&lt;br&gt;
+You can use the &lt;code&gt;src&lt;/code&gt; branch to write the content of your website. Every push to &lt;code&gt;origin&lt;/code&gt; will trigger a &lt;code&gt;GitHub workflow&lt;/code&gt; which then updates the &lt;code&gt;master&lt;/code&gt; branch of the same repository with the rendered version of the website. Nice.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to:  Lambda function with RUST</title>
+      <link>/post/2020/05/serverless-lambda-with-rust/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020/05/serverless-lambda-with-rust/</guid>
+      <description>&lt;h2 id=&#34;thoughts&#34;&gt;Thoughts&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Mount &lt;code&gt;/var&lt;/code&gt; for &lt;code&gt;docker&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Kickstart with &lt;code&gt;rust-aws-lambda-template&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Kickstart with &lt;code&gt;serverless-aws-lambda-rust&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Invoke using &lt;code&gt;make invoke&lt;/code&gt; instead of &lt;code&gt;curl&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;why-rust&#34;&gt;Why RUST&lt;/h2&gt;
+&lt;h2 id=&#34;it-kinda-works-with-aws-lambda&#34;&gt;It (kinda) works with AWS Lambda&lt;/h2&gt;
 </description>
     </item>
     

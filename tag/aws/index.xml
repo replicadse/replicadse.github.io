@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rust | Heiko A. Weber</title>
-    <link>/tag/rust/</link>
-      <atom:link href="/tag/rust/index.xml" rel="self" type="application/rss+xml" />
-    <description>rust</description>
+    <title>aws | Heiko A. Weber</title>
+    <link>/tag/aws/</link>
+      <atom:link href="/tag/aws/index.xml" rel="self" type="application/rss+xml" />
+    <description>aws</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>rust</title>
-      <link>/tag/rust/</link>
+      <title>aws</title>
+      <link>/tag/aws/</link>
     </image>
-    
-    <item>
-      <title>complate</title>
-      <link>/project/complate/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/complate/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>How to:  Lambda function with RUST</title>
@@ -35,14 +27,6 @@
 &lt;h2 id=&#34;why-rust&#34;&gt;Why RUST&lt;/h2&gt;
 &lt;h2 id=&#34;it-kinda-works-with-aws-lambda&#34;&gt;It (kinda) works with AWS Lambda&lt;/h2&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>wavefront_rs</title>
-      <link>/project/wavefront_rs/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/wavefront_rs/</guid>
-      <description></description>
     </item>
     
   </channel>
