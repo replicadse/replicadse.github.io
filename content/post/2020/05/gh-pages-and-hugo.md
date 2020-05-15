@@ -32,7 +32,7 @@ cd $(github.username).github.io
 git init
 
 # create empty master branch
-git commit -m "init" --allow-empty
+git commit -m "init master" --allow-empty
 git remote add origin git@github.com:$(github.username)/$(github.username).github.io
 git push --set-upstream origin master
 
@@ -42,7 +42,7 @@ git checkout src
 hugo new site . --force
 # add master branch of current repo as submodule that live in the public/ directory
 git submodule add -b master git@github.com:$(github.username)/$(github.username).github.io public
-git push
+git add . && git commit -m "init src" && git push
 ```
 
 Make sure to replace the $(github.username) with your GitHub username. This will create an empty `master` branch and checkout the `src` branch locally. This is important because the `master` branch will contain the rendered website content whereas the `src` branch will contain the source files for Hugo.\
