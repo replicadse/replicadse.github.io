@@ -27,7 +27,7 @@
   
     
   
-  <meta name="description" content="Thoughts  Mount /var for docker Kickstart with rust-aws-lambda-template Kickstart with serverless-aws-lambda-rust Invoke using make invoke instead of curl  Why RUST It (kinda) works with AWS Lambda ">
+  <meta name="description" content="Table of Contents  Why Rust Why AWS and Lambda It now works with AWS Lambda   Prerequisites  Serverless Localstack AWS CLI local   Bootstrapping   Foreword Why Rust Rust has just become 5 years old ( see blog post).">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/2020/05/serverless-lambda-with-rust/">
@@ -240,14 +240,14 @@
   
   <meta property="og:site_name" content="Heiko A. Weber">
   <meta property="og:url" content="/post/2020/05/serverless-lambda-with-rust/">
-  <meta property="og:title" content="How to: Lambda function with RUST | Heiko A. Weber">
-  <meta property="og:description" content="Thoughts  Mount /var for docker Kickstart with rust-aws-lambda-template Kickstart with serverless-aws-lambda-rust Invoke using make invoke instead of curl  Why RUST It (kinda) works with AWS Lambda "><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:title" content="How to: Serverless, AWS Lambda and Rust | Heiko A. Weber">
+  <meta property="og:description" content="Table of Contents  Why Rust Why AWS and Lambda It now works with AWS Lambda   Prerequisites  Serverless Localstack AWS CLI local   Bootstrapping   Foreword Why Rust Rust has just become 5 years old ( see blog post)."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-05-15T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-05-18T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-05-15T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-05-18T00:00:00&#43;00:00">
   
 
   
@@ -273,10 +273,10 @@
     "@type": "WebPage",
     "@id": "/post/2020/05/serverless-lambda-with-rust/"
   },
-  "headline": "How to: Lambda function with RUST",
+  "headline": "How to: Serverless, AWS Lambda and Rust",
   
-  "datePublished": "2020-05-15T00:00:00Z",
-  "dateModified": "2020-05-15T00:00:00Z",
+  "datePublished": "2020-05-18T00:00:00Z",
+  "dateModified": "2020-05-18T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -291,7 +291,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Thoughts  Mount /var for docker Kickstart with rust-aws-lambda-template Kickstart with serverless-aws-lambda-rust Invoke using make invoke instead of curl  Why RUST It (kinda) works with AWS Lambda "
+  "description": "Table of Contents  Why Rust Why AWS and Lambda It now works with AWS Lambda   Prerequisites  Serverless Localstack AWS CLI local   Bootstrapping   Foreword Why Rust Rust has just become 5 years old ( see blog post)."
 }
 </script>
 
@@ -309,7 +309,7 @@
 
 
 
-  <title>How to: Lambda function with RUST | Heiko A. Weber</title>
+  <title>How to: Serverless, AWS Lambda and Rust | Heiko A. Weber</title>
 
 </head>
 
@@ -591,7 +591,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>How to: Lambda function with RUST</h1>
+  <h1>How to: Serverless, AWS Lambda and Rust</h1>
 
   
 
@@ -610,7 +610,7 @@
     
       
     
-    May 15, 2020
+    May 18, 2020
   </span>
   
 
@@ -619,7 +619,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min read
+    5 min read
   </span>
   
 
@@ -655,15 +655,84 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h2 id="thoughts">Thoughts</h2>
-<ul>
-<li>Mount <code>/var</code> for <code>docker</code></li>
-<li>Kickstart with <code>rust-aws-lambda-template</code></li>
-<li>Kickstart with <code>serverless-aws-lambda-rust</code></li>
-<li>Invoke using <code>make invoke</code> instead of <code>curl</code></li>
-</ul>
-<h2 id="why-rust">Why RUST</h2>
-<h2 id="it-kinda-works-with-aws-lambda">It (kinda) works with AWS Lambda</h2>
+      <h2>Table of Contents</h2>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-rust">Why Rust</a></li>
+    <li><a href="#why-aws-and-lambda">Why AWS and Lambda</a></li>
+    <li><a href="#it-now-works-with-aws-lambda">It now works with AWS Lambda</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#prerequisites">Prerequisites</a>
+      <ul>
+        <li><a href="#serverless">Serverless</a></li>
+        <li><a href="#localstack">Localstack</a></li>
+        <li><a href="#aws-cli-local">AWS CLI local</a></li>
+      </ul>
+    </li>
+    <li><a href="#bootstrapping">Bootstrapping</a></li>
+  </ul>
+</nav>
+<h1 id="foreword">Foreword</h1>
+<h2 id="why-rust">Why Rust</h2>
+<p>Rust has just become 5 years old (
+<a href="https://blog.rust-lang.org/2020/05/15/five-years-of-rust.html" target="_blank" rel="noopener">see blog post</a>). Along with many features the language brings there are a few reasons that stand out on why you should consider learning or even using the Rust programming language and ecosystem in your projects.<br>
+The most prominent feature of Rust is it&rsquo;s type system with the outstanding ownership model and the lack of a garbage collector (which is a very positive property). This allows the Rust compiler to detect race conditions and more at compile time. This is a huge improvement over the more traditional runtime exceptions that lead to unexpected behaviour. This is also one of the many reasons, big companies and institutions use Rust for their projects or refactorings, see 
+<a href="https://research.mozilla.org/servo-engines/" target="_blank" rel="noopener">the Servo engine (Mozilla Research)</a>.<br>
+For more information about the many awesome features the Rust language has, see 
+<a href="https://www.rust-lang.org" target="_blank" rel="noopener">the Rust homepage <code>https://www.rust-lang.org</code></a>.</p>
+<h2 id="why-aws-and-lambda">Why AWS and Lambda</h2>
+<p>Serverless approaches using a &ldquo;Function as a service&rdquo; approach are very attractive to everyone who does not want to worry about infrastructure and machines, updating packages via <code>apt</code> or rotating <code>SSH certificates</code> for remote connection and debugging / logging.<br>
+In a Cloud environment, where everything is interconnected, you usually want to focus on the #1 main thing a software engineer should do. Solving problems. Everything that distracts you from this #1 goal should be avoided. This is a long ongoing trend already. Today it is quite easy to implement a software, let&rsquo;s say using the <code>Go</code> programming language for example, and write a microservice that is RESTful. You do not need to manage any registers manually (thanks to a higher level programming language) or mess around with network protocols (thanks to many libraries that exist to handle this for you). You solely focus on solving your problem. By the way, the people that write the libraries that you may use have this problem to solve. So in some way, you both are doing the exact same thing whereas it is maybe just another layer of abstraction or type of problem.<br>
+Mostly thoughm when writing software I do not want to worry about operating it. At least not when it comes to running it. This should just be working. This is kind of the same argument why people still buy Apple products and accept the 
+<a href="https://en.wikipedia.org/wiki/Vendor_lock-in" target="_blank" rel="noopener">vendor lock in</a> that comes with that. It is simply working (I know this can be argued about).<br>
+Amazon AWS (but also other competitors like Microsoft Azure) and especially their Lambda service for running software in a Faas fashion enables you to do exactly that. By stripping your work from all the obsolete, redundant and annoying tasks that operating software in a secure and reliable manner brings with it, you can focus more on solving your actual problem.</p>
+<h2 id="it-now-works-with-aws-lambda">It now works with AWS Lambda</h2>
+<p>The relatively new 
+<a href="https://aws.amazon.com/blogs/opensource/rust-runtime-for-aws-lambda" target="_blank" rel="noopener">AWS Lambda Rust Runtime (GitHub)</a> provides a working runtime environment for Rust programs to be executed in. This runtime can be added as a dependency to your <code>Cargo.toml</code> and works out of the box. You will not really be able to communicate with other AWS services in a good way though, as this crate only provides the runtime and not AWS service bindings. For that, use the 
+<a href="https://github.com/rusoto/rusoto" target="_blank" rel="noopener">Rusoto project (GitHub)</a>. This crate provides bindings for all common AWS services including <code>S3</code>, <code>Lambda</code>, <code>DynamoDB</code> and more. An interesting fact is that the crates is generated based on the <code>botocore</code> service manifests.</p>
+<h1 id="setup">Setup</h1>
+<h2 id="prerequisites">Prerequisites</h2>
+<h3 id="serverless">Serverless</h3>
+<p>Serverless is a framework that let&rsquo;s you easily manage cloud infrastructure and deployments. It also offers an integration with <code>localstack</code> in order to deploy and test your infrastructure locally. Install via:</p>
+<pre><code>yarn add -g --dev serverless
+</code></pre>
+<h3 id="localstack">Localstack</h3>
+<p>Localstack is a local AWS mock project which mocks all commonly used services like <code>S3</code>, <code>Lambda</code>, <code>DynamoDB</code> and more. Install via:</p>
+<pre><code>pip install localstack
+</code></pre>
+<hr>
+<p><strong>MACOS</strong><br>
+If your are developing on MacOS then you will need to add the <code>/var</code> folder to your <code>shared paths</code> in the Docker config. This is not done easily though because <code>/var</code> is actually <code>/private/var/</code> and since the docker daemon uses <code>Finder</code> to select the path, you can not add <code>/var</code>. You will need to go to the docker daemon settings and edit the file using an editor.</p>
+<pre><code>vim ~/Library/Group\ Containers/group.com.docker/settings.json
+</code></pre>
+<p>Here, edit the <code>filesharingDirectories</code> array to also include <code>/var/folders</code> sothat it looks as follows:</p>
+<pre><code>&quot;filesharingDirectories&quot; : [
+    [...],
+    &quot;\/var\/folders&quot;,
+    &quot;\/private\/var\/folders&quot;
+],
+</code></pre>
+<hr>
+<h3 id="aws-cli-local">AWS CLI local</h3>
+<p>This tool is a wrapper around AWS CLI that automatically targets localstack. Install via:</p>
+<pre><code>pip install awscli-local
+</code></pre>
+<h2 id="bootstrapping">Bootstrapping</h2>
+<p>To bootstrap your development, you can use the 
+<a href="https://github.com/replicadse/aws-movies" target="_blank" rel="noopener">AWS Movies</a> template repository. This will get you started with your initial setup. All you now need to do is invoke following commands inside this repo:</p>
+<ol>
+<li><code>localstack start</code> <br /> Do this from a separate terminal since this command is blocking.</li>
+<li><code>make build</code> <br /> This builds all the binaries and artifacts.</li>
+<li><code>serverless deploy</code> <br /> This automatically deploys to the <code>dev</code> stage, which is mapped to your running instance of <code>localstack</code>.</li>
+<li><code>make test</code> <br /> This invokes a python script which is used to test the endpoints.</li>
+</ol>
+<hr>
+<p><strong>NOTE</strong><br>
+In order to deploy to other stages, simply add the <code>--stage ${stage}</code> flag to the <code>serverless deploy</code> command. In order to change the region, add <code>--region ${region}</code>. Default values are <code>dev</code> for <code>stage</code> and <code>us-east-1</code> for <code>region</code>.<br>
+You will need to setup proper <code>authentication</code> for serverless and aws in order to deploy to the cloud. I recommend simply using the <code>aws-cli</code> and invoking <code>aws configure</code> to do so.</p>
+<hr>
 
     </div>
 
@@ -702,7 +771,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/2020/05/serverless-lambda-with-rust/&amp;text=How%20to:%20Lambda%20function%20with%20RUST" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/2020/05/serverless-lambda-with-rust/&amp;text=How%20to:%20Serverless,%20AWS%20Lambda%20and%20Rust" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -715,7 +784,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/2020/05/serverless-lambda-with-rust/&amp;t=How%20to:%20Lambda%20function%20with%20RUST" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/2020/05/serverless-lambda-with-rust/&amp;t=How%20to:%20Serverless,%20AWS%20Lambda%20and%20Rust" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -728,7 +797,7 @@
       
       
       <li>
-        <a href="mailto:?subject=How%20to:%20Lambda%20function%20with%20RUST&amp;body=/post/2020/05/serverless-lambda-with-rust/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=How%20to:%20Serverless,%20AWS%20Lambda%20and%20Rust&amp;body=/post/2020/05/serverless-lambda-with-rust/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -741,7 +810,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/2020/05/serverless-lambda-with-rust/&amp;title=How%20to:%20Lambda%20function%20with%20RUST" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2020/05/serverless-lambda-with-rust/&amp;title=How%20to:%20Serverless,%20AWS%20Lambda%20and%20Rust" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -754,7 +823,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=How%20to:%20Lambda%20function%20with%20RUST%20/post/2020/05/serverless-lambda-with-rust/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=How%20to:%20Serverless,%20AWS%20Lambda%20and%20Rust%20/post/2020/05/serverless-lambda-with-rust/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -767,7 +836,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/2020/05/serverless-lambda-with-rust/&amp;title=How%20to:%20Lambda%20function%20with%20RUST" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/2020/05/serverless-lambda-with-rust/&amp;title=How%20to:%20Serverless,%20AWS%20Lambda%20and%20Rust" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

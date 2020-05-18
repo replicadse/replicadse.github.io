@@ -5,7 +5,7 @@
     <link>/tag/rust/</link>
       <atom:link href="/tag/rust/index.xml" rel="self" type="application/rss+xml" />
     <description>rust</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>rust</title>
@@ -13,28 +13,97 @@
     </image>
     
     <item>
+      <title>How to: Serverless, AWS Lambda and Rust</title>
+      <link>/post/2020/05/serverless-lambda-with-rust/</link>
+      <pubDate>Mon, 18 May 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020/05/serverless-lambda-with-rust/</guid>
+      <description>&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#why-rust&#34;&gt;Why Rust&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#why-aws-and-lambda&#34;&gt;Why AWS and Lambda&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#it-now-works-with-aws-lambda&#34;&gt;It now works with AWS Lambda&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#prerequisites&#34;&gt;Prerequisites&lt;/a&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&#34;#serverless&#34;&gt;Serverless&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#localstack&#34;&gt;Localstack&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&#34;#aws-cli-local&#34;&gt;AWS CLI local&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#bootstrapping&#34;&gt;Bootstrapping&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;h1 id=&#34;foreword&#34;&gt;Foreword&lt;/h1&gt;
+&lt;h2 id=&#34;why-rust&#34;&gt;Why Rust&lt;/h2&gt;
+&lt;p&gt;Rust has just become 5 years old (
+&lt;a href=&#34;https://blog.rust-lang.org/2020/05/15/five-years-of-rust.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;see blog post&lt;/a&gt;). Along with many features the language brings there are a few reasons that stand out on why you should consider learning or even using the Rust programming language and ecosystem in your projects.&lt;br&gt;
+The most prominent feature of Rust is it&amp;rsquo;s type system with the outstanding ownership model and the lack of a garbage collector (which is a very positive property). This allows the Rust compiler to detect race conditions and more at compile time. This is a huge improvement over the more traditional runtime exceptions that lead to unexpected behaviour. This is also one of the many reasons, big companies and institutions use Rust for their projects or refactorings, see 
+&lt;a href=&#34;https://research.mozilla.org/servo-engines/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Servo engine (Mozilla Research)&lt;/a&gt;.&lt;br&gt;
+For more information about the many awesome features the Rust language has, see 
+&lt;a href=&#34;https://www.rust-lang.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;the Rust homepage &lt;code&gt;https://www.rust-lang.org&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why-aws-and-lambda&#34;&gt;Why AWS and Lambda&lt;/h2&gt;
+&lt;p&gt;Serverless approaches using a &amp;ldquo;Function as a service&amp;rdquo; approach are very attractive to everyone who does not want to worry about infrastructure and machines, updating packages via &lt;code&gt;apt&lt;/code&gt; or rotating &lt;code&gt;SSH certificates&lt;/code&gt; for remote connection and debugging / logging.&lt;br&gt;
+In a Cloud environment, where everything is interconnected, you usually want to focus on the #1 main thing a software engineer should do. Solving problems. Everything that distracts you from this #1 goal should be avoided. This is a long ongoing trend already. Today it is quite easy to implement a software, let&amp;rsquo;s say using the &lt;code&gt;Go&lt;/code&gt; programming language for example, and write a microservice that is RESTful. You do not need to manage any registers manually (thanks to a higher level programming language) or mess around with network protocols (thanks to many libraries that exist to handle this for you). You solely focus on solving your problem. By the way, the people that write the libraries that you may use have this problem to solve. So in some way, you both are doing the exact same thing whereas it is maybe just another layer of abstraction or type of problem.&lt;br&gt;
+Mostly thoughm when writing software I do not want to worry about operating it. At least not when it comes to running it. This should just be working. This is kind of the same argument why people still buy Apple products and accept the 
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Vendor_lock-in&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;vendor lock in&lt;/a&gt; that comes with that. It is simply working (I know this can be argued about).&lt;br&gt;
+Amazon AWS (but also other competitors like Microsoft Azure) and especially their Lambda service for running software in a Faas fashion enables you to do exactly that. By stripping your work from all the obsolete, redundant and annoying tasks that operating software in a secure and reliable manner brings with it, you can focus more on solving your actual problem.&lt;/p&gt;
+&lt;h2 id=&#34;it-now-works-with-aws-lambda&#34;&gt;It now works with AWS Lambda&lt;/h2&gt;
+&lt;p&gt;The relatively new 
+&lt;a href=&#34;https://aws.amazon.com/blogs/opensource/rust-runtime-for-aws-lambda&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Lambda Rust Runtime (GitHub)&lt;/a&gt; provides a working runtime environment for Rust programs to be executed in. This runtime can be added as a dependency to your &lt;code&gt;Cargo.toml&lt;/code&gt; and works out of the box. You will not really be able to communicate with other AWS services in a good way though, as this crate only provides the runtime and not AWS service bindings. For that, use the 
+&lt;a href=&#34;https://github.com/rusoto/rusoto&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rusoto project (GitHub)&lt;/a&gt;. This crate provides bindings for all common AWS services including &lt;code&gt;S3&lt;/code&gt;, &lt;code&gt;Lambda&lt;/code&gt;, &lt;code&gt;DynamoDB&lt;/code&gt; and more. An interesting fact is that the crates is generated based on the &lt;code&gt;botocore&lt;/code&gt; service manifests.&lt;/p&gt;
+&lt;h1 id=&#34;setup&#34;&gt;Setup&lt;/h1&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;h3 id=&#34;serverless&#34;&gt;Serverless&lt;/h3&gt;
+&lt;p&gt;Serverless is a framework that let&amp;rsquo;s you easily manage cloud infrastructure and deployments. It also offers an integration with &lt;code&gt;localstack&lt;/code&gt; in order to deploy and test your infrastructure locally. Install via:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yarn add -g --dev serverless
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;localstack&#34;&gt;Localstack&lt;/h3&gt;
+&lt;p&gt;Localstack is a local AWS mock project which mocks all commonly used services like &lt;code&gt;S3&lt;/code&gt;, &lt;code&gt;Lambda&lt;/code&gt;, &lt;code&gt;DynamoDB&lt;/code&gt; and more. Install via:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install localstack
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;MACOS&lt;/strong&gt;&lt;br&gt;
+If your are developing on MacOS then you will need to add the &lt;code&gt;/var&lt;/code&gt; folder to your &lt;code&gt;shared paths&lt;/code&gt; in the Docker config. This is not done easily though because &lt;code&gt;/var&lt;/code&gt; is actually &lt;code&gt;/private/var/&lt;/code&gt; and since the docker daemon uses &lt;code&gt;Finder&lt;/code&gt; to select the path, you can not add &lt;code&gt;/var&lt;/code&gt;. You will need to go to the docker daemon settings and edit the file using an editor.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vim ~/Library/Group\ Containers/group.com.docker/settings.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here, edit the &lt;code&gt;filesharingDirectories&lt;/code&gt; array to also include &lt;code&gt;/var/folders&lt;/code&gt; sothat it looks as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;filesharingDirectories&amp;quot; : [
+    [...],
+    &amp;quot;\/var\/folders&amp;quot;,
+    &amp;quot;\/private\/var\/folders&amp;quot;
+],
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;aws-cli-local&#34;&gt;AWS CLI local&lt;/h3&gt;
+&lt;p&gt;This tool is a wrapper around AWS CLI that automatically targets localstack. Install via:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install awscli-local
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;bootstrapping&#34;&gt;Bootstrapping&lt;/h2&gt;
+&lt;p&gt;To bootstrap your development, you can use the 
+&lt;a href=&#34;https://github.com/replicadse/aws-movies&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Movies&lt;/a&gt; template repository. This will get you started with your initial setup. All you now need to do is invoke following commands inside this repo:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;localstack start&lt;/code&gt; &lt;br /&gt; Do this from a separate terminal since this command is blocking.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make build&lt;/code&gt; &lt;br /&gt; This builds all the binaries and artifacts.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;serverless deploy&lt;/code&gt; &lt;br /&gt; This automatically deploys to the &lt;code&gt;dev&lt;/code&gt; stage, which is mapped to your running instance of &lt;code&gt;localstack&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make test&lt;/code&gt; &lt;br /&gt; This invokes a python script which is used to test the endpoints.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;&lt;br&gt;
+In order to deploy to other stages, simply add the &lt;code&gt;--stage ${stage}&lt;/code&gt; flag to the &lt;code&gt;serverless deploy&lt;/code&gt; command. In order to change the region, add &lt;code&gt;--region ${region}&lt;/code&gt;. Default values are &lt;code&gt;dev&lt;/code&gt; for &lt;code&gt;stage&lt;/code&gt; and &lt;code&gt;us-east-1&lt;/code&gt; for &lt;code&gt;region&lt;/code&gt;.&lt;br&gt;
+You will need to setup proper &lt;code&gt;authentication&lt;/code&gt; for serverless and aws in order to deploy to the cloud. I recommend simply using the &lt;code&gt;aws-cli&lt;/code&gt; and invoking &lt;code&gt;aws configure&lt;/code&gt; to do so.&lt;/p&gt;
+&lt;hr&gt;
+</description>
+    </item>
+    
+    <item>
       <title>complate</title>
       <link>/project/complate/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       <guid>/project/complate/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>How to: Lambda function with RUST</title>
-      <link>/post/2020/05/serverless-lambda-with-rust/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      <guid>/post/2020/05/serverless-lambda-with-rust/</guid>
-      <description>&lt;h2 id=&#34;thoughts&#34;&gt;Thoughts&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Mount &lt;code&gt;/var&lt;/code&gt; for &lt;code&gt;docker&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Kickstart with &lt;code&gt;rust-aws-lambda-template&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Kickstart with &lt;code&gt;serverless-aws-lambda-rust&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Invoke using &lt;code&gt;make invoke&lt;/code&gt; instead of &lt;code&gt;curl&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;why-rust&#34;&gt;Why RUST&lt;/h2&gt;
-&lt;h2 id=&#34;it-kinda-works-with-aws-lambda&#34;&gt;It (kinda) works with AWS Lambda&lt;/h2&gt;
-</description>
     </item>
     
     <item>
