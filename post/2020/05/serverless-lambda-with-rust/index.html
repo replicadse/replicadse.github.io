@@ -696,7 +696,14 @@ Amazon AWS (but also other competitors like Microsoft Azure) and especially thei
 <h2 id="prerequisites">Prerequisites</h2>
 <h3 id="serverless">Serverless</h3>
 <p>Serverless is a framework that let&rsquo;s you easily manage cloud infrastructure and deployments. It also offers an integration with <code>localstack</code> in order to deploy and test your infrastructure locally. Install via:</p>
+<pre><code>brew install serverless
+</code></pre>
+<p>or</p>
 <pre><code>yarn add -g --dev serverless
+</code></pre>
+<p>You will also need <code>serverless-localstack</code>. Install via:</p>
+<pre><code>yarn add --dev serverless-localstack
+serverless plugin install --name serverless-localstack
 </code></pre>
 <h3 id="localstack">Localstack</h3>
 <p>Localstack is a local AWS mock project which mocks all commonly used services like <code>S3</code>, <code>Lambda</code>, <code>DynamoDB</code> and more. Install via:</p>
