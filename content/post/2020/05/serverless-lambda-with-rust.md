@@ -37,7 +37,16 @@ The relatively new [AWS Lambda Rust Runtime (GitHub)](https://aws.amazon.com/blo
 
 Serverless is a framework that let's you easily manage cloud infrastructure and deployments. It also offers an integration with `localstack` in order to deploy and test your infrastructure locally. Install via:
 ```
+brew install serverless
+```
+or
+```
 yarn add -g --dev serverless
+```
+You will also need `serverless-localstack`. Install via:
+```
+yarn add --dev serverless-localstack
+serverless plugin install --name serverless-localstack
 ```
 
 ### Localstack
