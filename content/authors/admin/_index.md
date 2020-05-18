@@ -18,13 +18,17 @@ organizations:
   url: "https://jungheinrich.de"
 - name: DECLSPEC Software Engineering
   url: "https://declspec.com"
+- name: Gesellschaft für Informatik
+  url: "https://gi.de"
 
 # Short bio (displayed in user profile at end of posts)
 bio: I do things.
 
 interests:
-- Artificial Intelligence
 - Open Source
+- Artificial Intelligence
+- IoT
+- Cloud (serverless and faas, containerization and orchestration)
 
 education:
   courses:
