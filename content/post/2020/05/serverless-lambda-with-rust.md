@@ -79,7 +79,7 @@ pip install awscli-local
 
 ## Bootstrapping
 
-To bootstrap your development, you can use the [AWS Movies](https://github.com/replicadse/aws-movies) template repository. This will get you started with your initial setup. All you now need to do is invoke following commands inside this repo:
+To bootstrap your development, you can use the [AWS Movies](https://github.com/replicadse/aws-movies-sls-rest-sample) template repository. This will get you started with your initial setup. All you now need to do is invoke following commands inside this repo:
 
 1) `localstack start` <br /> Do this from a separate terminal since this command is blocking.
 2) `make build` <br /> This builds all the binaries and artifacts.
