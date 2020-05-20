@@ -90,7 +90,7 @@ If your are developing on MacOS then you will need to add the &lt;code&gt;/var&l
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;bootstrapping&#34;&gt;Bootstrapping&lt;/h2&gt;
 &lt;p&gt;To bootstrap your development, you can use the 
-&lt;a href=&#34;https://github.com/replicadse/aws-movies&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Movies&lt;/a&gt; template repository. This will get you started with your initial setup. All you now need to do is invoke following commands inside this repo:&lt;/p&gt;
+&lt;a href=&#34;https://github.com/replicadse/aws-movies-sls-rest-sample&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AWS Movies&lt;/a&gt; template repository. This will get you started with your initial setup. All you now need to do is invoke following commands inside this repo:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;localstack start&lt;/code&gt; &lt;br /&gt; Do this from a separate terminal since this command is blocking.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make build&lt;/code&gt; &lt;br /&gt; This builds all the binaries and artifacts.&lt;/li&gt;
