@@ -28,7 +28,8 @@ interests:
 - Open Source
 - Artificial Intelligence
 - IoT
-- Cloud (serverless and faas, containerization and orchestration)
+- Cloud
+- Computer vision
 
 education:
   courses:
@@ -68,4 +69,4 @@ user_groups:
 - Admins
 ---
 
-Doing things. Sometimes even with result.
+Doing things.

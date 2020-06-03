@@ -5,7 +5,7 @@ math: true
 diagram: true
 tags: ["tutorial", "serverless", "aws", "lambda", "rust", "faas"]
 featured: false
-draft: true
+draft: false
 ---
 
 {{% toc %}}

@@ -16,7 +16,7 @@ subtitle = ""
 [[feature]]
   icon = "rust"
   icon_pack = "custom"
-  name = "RUST"
+  name = "Rust"
 
 [[feature]]
   icon = "go"
@@ -27,6 +27,36 @@ subtitle = ""
   icon = "python"
   icon_pack = "fab"
   name = "Python 3"
+
+[[feature]]
+  icon = "c-sharp"
+  icon_pack = "custom"
+  name = "C#"
+
+[[feature]]
+  icon = "netcore"
+  icon_pack = "custom"
+  name = ".NET Core"
+
+[[feature]]
+  icon = "aws-2"
+  icon_pack = "custom"
+  name = "Amazon AWS"
+
+[[feature]]
+  icon = "docker"
+  icon_pack = "custom"
+  name = "Docker"
+
+[[feature]]
+  icon = "kubernetes"
+  icon_pack = "custom"
+  name = "Kubernetes"
+
+[[feature]]
+  icon = "terraform"
+  icon_pack = "custom"
+  name = "Terraform"
 
 [[feature]]
   icon = "git"
