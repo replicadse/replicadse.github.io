@@ -26,7 +26,7 @@ bio: I do things.
 
 interests:
 - Open Source
-- Artificial Intelligence
+- Artificial Intelligence / Machine Learning
 - IoT
 - Cloud
 - Computer vision
