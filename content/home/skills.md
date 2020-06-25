@@ -28,15 +28,20 @@ subtitle = ""
   icon_pack = "fab"
   name = "Python 3"
 
-[[feature]]
-  icon = "c-sharp"
+  [[feature]]
+  icon = "tensorflow"
   icon_pack = "custom"
-  name = "C#"
+  name = "TensorFlow"
 
 [[feature]]
-  icon = "netcore"
+  icon = "pytorch"
   icon_pack = "custom"
-  name = ".NET Core"
+  name = "PyTorch"
+
+[[feature]]
+  icon = "jupyter"
+  icon_pack = "custom"
+  name = "Jupyter"
 
 [[feature]]
   icon = "aws-2"
@@ -52,6 +57,16 @@ subtitle = ""
   icon = "kubernetes"
   icon_pack = "custom"
   name = "Kubernetes"
+
+[[feature]]
+  icon = "c-sharp"
+  icon_pack = "custom"
+  name = "C#"
+
+[[feature]]
+  icon = "netcore"
+  icon_pack = "custom"
+  name = ".NET Core"
 
 [[feature]]
   icon = "terraform"
@@ -72,11 +87,6 @@ subtitle = ""
   icon = "vscode"
   icon_pack = "custom"
   name = "VS Code"
-
-[[feature]]
-  icon = "tensorflow"
-  icon_pack = "custom"
-  name = "TensorFlow"
 
 # Uncomment to use emoji icons.
 # [[feature]]
