@@ -16,12 +16,9 @@ abstract: "A meetup and talk about cloud native and autoscaling it architecture 
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: "2019-10-24"
-date_end: "2019-10-24"
+date: "2019-10-24 18:30:00"
+date_end: "2019-10-24 21:00:00"
 all_day: false
-
-# Schedule page publish date (NOT talk date).
-publishDate: "2019-10-20"
 
 authors: ["admin"]
 tags: ["talk", "architecture", "cloud"]

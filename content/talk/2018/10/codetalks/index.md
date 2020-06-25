@@ -20,9 +20,6 @@ date: "2018-10-18"
 date_end: "2018-10-19"
 all_day: true
 
-# Schedule page publish date (NOT talk date).
-publishDate: "2018-10-01"
-
 authors: ["admin"]
 tags: ["talk", "software-quality"]
 
