@@ -16,8 +16,8 @@ role: Administrator
 organizations:
 - name: Jungheinrich AG
   url: "https://jungheinrich.de"
-- name: DECLSPEC Software Engineering
-  url: "https://declspec.com"
+- name: void* group
+  url: "mailto:haw@voidpointergroup.com"
 - name: Gesellschaft für Informatik
   url: "https://gi.de"
 
