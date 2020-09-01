@@ -28,6 +28,11 @@ subtitle = ""
   icon_pack = "fab"
   name = "Python 3"
 
+[[feature]]
+  icon = "ts"
+  icon_pack = "custom"
+  name = "TypeScript"
+
   [[feature]]
   icon = "tensorflow"
   icon_pack = "custom"
