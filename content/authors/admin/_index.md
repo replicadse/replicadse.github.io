@@ -15,7 +15,7 @@ role: Administrator
 # Organizations/Affiliations
 organizations:
 - name: Jungheinrich AG
-  url: "https://jungheinrich.de"
+  url: "https://jungheinrich.com"
 - name: void* group
   url: "mailto:haw@voidpointergroup.com"
 - name: Gesellschaft für Informatik
