@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>rust | Heiko A. Weber</title>
-    <link>/category/rust/</link>
-      <atom:link href="/category/rust/index.xml" rel="self" type="application/rss+xml" />
-    <description>rust</description>
+    <title>typescript | Heiko A. Weber</title>
+    <link>/tag/typescript/</link>
+      <atom:link href="/tag/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <description>typescript</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>rust</title>
-      <link>/category/rust/</link>
+      <title>typescript</title>
+      <link>/tag/typescript/</link>
     </image>
     
     <item>
@@ -25,30 +25,6 @@ The assumption for this to work is that the ticket contains all the necessary in
 &lt;h2 id=&#34;current-state&#34;&gt;Current state&lt;/h2&gt;
 &lt;p&gt;Currently, only the crawler for training, test and validation data is working. It crawls tickets from GitHub and saves them into AWS S3 buckets (using the AWS ecosystem).&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>aws-movies</title>
-      <link>/project/aws-movies/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/aws-movies/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>complate</title>
-      <link>/project/complate/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/complate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wavefront_rs</title>
-      <link>/project/wavefront_rs/</link>
-      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/wavefront_rs/</guid>
-      <description></description>
     </item>
     
   </channel>

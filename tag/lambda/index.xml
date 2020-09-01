@@ -5,12 +5,27 @@
     <link>/tag/lambda/</link>
       <atom:link href="/tag/lambda/index.xml" rel="self" type="application/rss+xml" />
     <description>lambda</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 18 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>lambda</title>
       <link>/tag/lambda/</link>
     </image>
+    
+    <item>
+      <title>apollon</title>
+      <link>/project/apollon/</link>
+      <pubDate>Mon, 31 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/project/apollon/</guid>
+      <description>&lt;h2 id=&#34;sketch&#34;&gt;Sketch&lt;/h2&gt;
+&lt;p&gt;Apollon is a project for classifying tickets in a ticket system into categories (like type, component, labels) before you do it.&lt;br&gt;
+Please find this project on 
+&lt;a href=&#34;https://github.com/replicadse/apollon&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+The assumption for this to work is that the ticket contains all the necessary information in title and description. Apollon classifies various dates including components, labels, type and priority.&lt;/p&gt;
+&lt;h2 id=&#34;current-state&#34;&gt;Current state&lt;/h2&gt;
+&lt;p&gt;Currently, only the crawler for training, test and validation data is working. It crawls tickets from GitHub and saves them into AWS S3 buckets (using the AWS ecosystem).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>How to: Serverless, AWS Lambda and Rust</title>
