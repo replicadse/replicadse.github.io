@@ -20,7 +20,7 @@ date_format = "Jan 2006"
 [[experience]]
   title = "Senior Lead Software Engineer"
   company = "Jungheinrich Digital Solutions AG & Co. KG"
-  company_url = "https://jungheinrich.de"
+  company_url = "https://jungheinrich.com"
   location = "Hamburg, Germany"
   date_start = "2019-11-01"
   date_end = ""
