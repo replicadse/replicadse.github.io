@@ -3,12 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/project/apollon/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
+    <loc>/authors/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/</loc>
+    <loc>/categories/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/go/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/go/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/author/heiko-a.-weber/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/licensemit/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/category/project/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/raiding-raccoon/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-10-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/apollon/</loc>
     <lastmod>2020-08-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,37 +73,7 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/heiko-a.-weber/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/lambda/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/licensemit/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/project/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
     <lastmod>2020-08-31T00:00:00+00:00</lastmod>
   </url>
   
@@ -64,11 +84,6 @@
   
   <url>
     <loc>/tag/serverless/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-08-31T00:00:00+00:00</lastmod>
   </url>
   

@@ -5,12 +5,27 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 31 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 03 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
       <link>/project/</link>
     </image>
+    
+    <item>
+      <title>raiding-raccoon</title>
+      <link>/project/raiding-raccoon/</link>
+      <pubDate>Sat, 03 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/project/raiding-raccoon/</guid>
+      <description>&lt;p&gt;Please find this project on 
+&lt;a href=&#34;https://github.com/replicadse/raiding-raccoon&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;why&#34;&gt;Why&lt;/h2&gt;
+&lt;p&gt;Well&amp;hellip; I created this because I was interested in the network that links create on a website. Checking the fastest path from one page to another.&lt;br&gt;
+It turned out that a proper graph representation of pages that are linked to another can do really cool things. Especially when using the exported graphml format and loading it into an application like 
+&lt;a href=&#34;https://gephi.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gephi&lt;/a&gt; and then using the 
+&lt;a href=&#34;https://arxiv.org/pdf/1905.02202.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ForceAtlas 2&lt;/a&gt; simulation. This creates really interesting insights.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>apollon</title>

@@ -27,10 +27,10 @@
   
     
   
-  <meta name="description" content="Classifying issues before you do.">
+  <meta name="description" content="A website topography scanning tool.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/project/apollon/">
+  <link rel="alternate" hreflang="en-us" href="/project/raiding-raccoon/">
 
   
 
@@ -217,7 +217,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/project/apollon/">
+  <link rel="canonical" href="/project/raiding-raccoon/">
 
   
   
@@ -236,15 +236,15 @@
   <meta property="twitter:creator" content="@HeikoAWeber">
   
   <meta property="og:site_name" content="Heiko A. Weber">
-  <meta property="og:url" content="/project/apollon/">
-  <meta property="og:title" content="apollon | Heiko A. Weber">
-  <meta property="og:description" content="Classifying issues before you do."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="/project/raiding-raccoon/">
+  <meta property="og:title" content="raiding-raccoon | Heiko A. Weber">
+  <meta property="og:description" content="A website topography scanning tool."><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-08-31T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-10-03T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-08-31T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-10-03T00:00:00&#43;00:00">
   
 
   
@@ -266,12 +266,12 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/project/apollon/"
+    "@id": "/project/raiding-raccoon/"
   },
-  "headline": "apollon",
+  "headline": "raiding-raccoon",
   
-  "datePublished": "2020-08-31T00:00:00Z",
-  "dateModified": "2020-08-31T00:00:00Z",
+  "datePublished": "2020-10-03T00:00:00Z",
+  "dateModified": "2020-10-03T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -286,7 +286,7 @@
       "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Classifying issues before you do."
+  "description": "A website topography scanning tool."
 }
 </script>
 
@@ -304,7 +304,7 @@
 
 
 
-  <title>apollon | Heiko A. Weber</title>
+  <title>raiding-raccoon | Heiko A. Weber</title>
 
 </head>
 
@@ -586,7 +586,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>apollon</h1>
+  <h1>raiding-raccoon</h1>
 
   
 
@@ -615,7 +615,7 @@
     
       
     
-    Aug 31, 2020
+    Oct 3, 2020
   </span>
   
 
@@ -631,7 +631,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-categories">
-    <i class="fas fa-folder mr-1"></i><a href="/category/project/">project</a>, <a href="/category/aws/">aws</a>, <a href="/category/rust/">rust</a></span>
+    <i class="fas fa-folder mr-1"></i><a href="/category/go/">go</a>, <a href="/category/project/">project</a></span>
   
 
 </div>
@@ -659,13 +659,13 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h2 id="sketch">Sketch</h2>
-<p>Apollon is a project for classifying tickets in a ticket system into categories (like type, component, labels) before you do it.<br>
-Please find this project on 
-<a href="https://github.com/replicadse/apollon" target="_blank" rel="noopener">GitHub</a>.<br>
-The assumption for this to work is that the ticket contains all the necessary information in title and description. Apollon classifies various dates including components, labels, type and priority.</p>
-<h2 id="current-state">Current state</h2>
-<p>Currently, only the crawler for training, test and validation data is working. It crawls tickets from GitHub and saves them into AWS S3 buckets (using the AWS ecosystem).</p>
+      <p>Please find this project on 
+<a href="https://github.com/replicadse/raiding-raccoon" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="why">Why</h2>
+<p>Well&hellip; I created this because I was interested in the network that links create on a website. Checking the fastest path from one page to another.<br>
+It turned out that a proper graph representation of pages that are linked to another can do really cool things. Especially when using the exported graphml format and loading it into an application like 
+<a href="https://gephi.org" target="_blank" rel="noopener">Gephi</a> and then using the 
+<a href="https://arxiv.org/pdf/1905.02202.pdf" target="_blank" rel="noopener">ForceAtlas 2</a> simulation. This creates really interesting insights.</p>
 
     </div>
 
@@ -677,15 +677,9 @@ The assumption for this to work is that the ticket contains all the necessary in
 
 <div class="article-tags">
   
+  <a class="badge badge-light" href="/tag/go/">go</a>
+  
   <a class="badge badge-light" href="/tag/licensemit/">License:MIT</a>
-  
-  <a class="badge badge-light" href="/tag/aws/">aws</a>
-  
-  <a class="badge badge-light" href="/tag/lambda/">lambda</a>
-  
-  <a class="badge badge-light" href="/tag/serverless/">serverless</a>
-  
-  <a class="badge badge-light" href="/tag/typescript/">typescript</a>
   
 </div>
 
@@ -702,7 +696,7 @@ The assumption for this to work is that the ticket contains all the necessary in
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/project/apollon/&amp;text=apollon" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/project/raiding-raccoon/&amp;text=raiding-raccoon" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -715,7 +709,7 @@ The assumption for this to work is that the ticket contains all the necessary in
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/project/apollon/&amp;t=apollon" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/project/raiding-raccoon/&amp;t=raiding-raccoon" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -728,7 +722,7 @@ The assumption for this to work is that the ticket contains all the necessary in
       
       
       <li>
-        <a href="mailto:?subject=apollon&amp;body=/project/apollon/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=raiding-raccoon&amp;body=/project/raiding-raccoon/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -741,7 +735,7 @@ The assumption for this to work is that the ticket contains all the necessary in
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/project/apollon/&amp;title=apollon" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/project/raiding-raccoon/&amp;title=raiding-raccoon" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -754,7 +748,7 @@ The assumption for this to work is that the ticket contains all the necessary in
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=apollon%20/project/apollon/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=raiding-raccoon%20/project/raiding-raccoon/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -767,7 +761,7 @@ The assumption for this to work is that the ticket contains all the necessary in
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/project/apollon/&amp;title=apollon" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/project/raiding-raccoon/&amp;title=raiding-raccoon" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -886,7 +880,7 @@ The assumption for this to work is that the ticket contains all the necessary in
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/post/2020/05/serverless-lambda-with-rust/">How to: Serverless, AWS Lambda and Rust</a></li>
+      <li><a href="/project/apollon/">apollon</a></li>
       
       <li><a href="/project/aws-movies/">aws-movies</a></li>
       
