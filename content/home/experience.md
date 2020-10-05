@@ -30,7 +30,7 @@ date_format = "Jan 2006"
   company = "Cassini Consulting AG"
   company_url = "https://cassini.de"
   location = "Düsseldorf, Germany"
-  date_start = "2019-03-01"
+  date_start = "2018-03-01"
   date_end = "2019-10-01"
 
 [[experience]]
