@@ -4,7 +4,7 @@ date: 2020-05-15
 math: true
 diagram: true
 tags: ["git", "github", "hugo", "workflows", "branches", "tutorial"]
-featured: true
+featured: false
 draft: false
 ---
 
