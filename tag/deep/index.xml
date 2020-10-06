@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deep | Heiko A. Weber</title>
+    <link>/tag/deep/</link>
+      <atom:link href="/tag/deep/index.xml" rel="self" type="application/rss+xml" />
+    <description>deep</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 06 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>deep</title>
+      <link>/tag/deep/</link>
+    </image>
+    
+    <item>
+      <title>Personal achievement: Udacity Deep Learning certificate</title>
+      <link>/post/2020/10/udacity-deep-learning/udacity-deep-learning/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020/10/udacity-deep-learning/udacity-deep-learning/</guid>
+      <description>&lt;img src=&#34;../udacity-deep-learning.png&#34;/&gt;
+&lt;h1 id=&#34;i-did-it&#34;&gt;I did it&lt;/h1&gt;
+&lt;p&gt;Today I graduated from Udacity and their Deep Learning program. After a quite turbulent time the past months, it really feels as an achievement.&lt;br&gt;
+Spending a few hours every evening in learning and applying my prior knowledge I now consider myself having a better academic background to machine learning than before and am looking forward to be spending even more time in this area in future.&lt;/p&gt;
+&lt;h2 id=&#34;projects&#34;&gt;Projects&lt;/h2&gt;
+&lt;p&gt;During the course I was able to reach milestone by milestone. Following lessons were notable:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Proper introduction to error and loss functions, backward propagation for complex networks using partial derivatives and more basics&lt;/li&gt;
+&lt;li&gt;Proper introduction to data science techniques, data exploration and various frameworks&lt;/li&gt;
+&lt;li&gt;Project: Predicting Bike Sharing patterns using multilayer perceptrons written in plain pure python&lt;/li&gt;
+&lt;li&gt;Proper introduction to PyTorch&lt;/li&gt;
+&lt;li&gt;Introduction to CNNs and computer graphics&lt;/li&gt;
+&lt;li&gt;Project: Predicting dog breeds by re-configuring imagenet and applying CNNs&lt;/li&gt;
+&lt;li&gt;Natural language processing and analysis (Word2Vec etc.)&lt;/li&gt;
+&lt;li&gt;Small project: Sentiment prediction of movie reviews&lt;/li&gt;
+&lt;li&gt;Generation of natural language and text&lt;/li&gt;
+&lt;li&gt;Project: Generating TV scripts (RNN)&lt;/li&gt;
+&lt;li&gt;Generative adversarial networks and CycleGANs&lt;/li&gt;
+&lt;li&gt;Project: Generating new realistic faces&lt;/li&gt;
+&lt;li&gt;Deploying the models to AWS SageMaker (PyTorch framework)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Although I have had quite some experience in some of these areas like computer vision, it was nice to see some approaches in a more academic way than I am used to when doing such things during working hours.\&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
