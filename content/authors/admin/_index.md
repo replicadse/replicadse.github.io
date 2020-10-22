@@ -68,8 +68,7 @@ email: "heiko.a.weber@gmail.com"
 user_groups:
 - Admins
 ---
-It’s not magic, it’s talent and sweat.\
-- Bertram Gilfoyle
+It’s not magic, it’s talent and sweat. (Bertram Gilfoyle, Silicon Valley)
 
 Find me on FreelancerMap:
 <a href="https://www.freelancermap.com/freelancers-directory/profile/development/198908-profil-senior-software-engineer-architect-net-c-python-rust-go.html)" target="_blank" title="Profile of Heiko Alexander Weber on www.freelancermap.com"><img src="https://www.freelancermap.com/images/widgets/button/freelancerProfile.png"></a>
