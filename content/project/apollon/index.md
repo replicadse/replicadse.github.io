@@ -7,6 +7,7 @@ authors: ["admin"]
 tags: ["typescript", "aws", "lambda", "serverless", "License:MIT"]
 categories: ["project", "rust", "aws"]
 date: 2020-08-31
+published: false
 
 # Optional external URL for project (replaces project detail page).
 #external_link: "https://github.com/replicadse/apollon"
