@@ -88,38 +88,8 @@
   </url>
   
   <url>
-    <loc>/project/apollon/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/aws/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/aws/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/lambda/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/rust/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/serverless/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/typescript/</loc>
-    <lastmod>2020-08-31T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -133,7 +103,17 @@
   </url>
   
   <url>
+    <loc>/tag/lambda/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tag/rust/</loc>
+    <lastmod>2020-05-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/serverless/</loc>
     <lastmod>2020-05-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -143,22 +123,7 @@
   </url>
   
   <url>
-    <loc>/project/aws-movies/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tag/branches/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/cloud/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/cloud/</loc>
     <lastmod>2020-05-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -188,22 +153,7 @@
   </url>
   
   <url>
-    <loc>/category/lambda/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/template/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tag/terraform/</loc>
-    <lastmod>2020-05-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/category/tutorial/</loc>
+    <loc>/category/rust/</loc>
     <lastmod>2020-05-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -219,6 +169,11 @@
   
   <url>
     <loc>/tag/architecture/</loc>
+    <lastmod>2019-10-24T18:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tag/cloud/</loc>
     <lastmod>2019-10-24T18:30:00+00:00</lastmod>
   </url>
   
