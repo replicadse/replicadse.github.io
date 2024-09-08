@@ -15,6 +15,7 @@
       <div v-for="(v, i) in experience" :key="i" class="experience-item">
         <h3>{{ v.title }} - {{ v.company }} ({{ v.country }})</h3>
         <p><em>{{ v.period }}</em></p>
+        <div style="margin-top: 2em;" />
         <ul>
           <li v-for="(bullet, j) in v.bullets" :key="j">
             {{ bullet }}
@@ -231,7 +232,7 @@ export default {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   color: #2c3e50;
   border-bottom: 3px solid #3498db;
   padding-bottom: 15px;
@@ -284,10 +285,10 @@ a:hover {
 
 .experience-item, .project-item, .publication-item {
   background-color: #f9f9f9;
-  padding: 10px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
