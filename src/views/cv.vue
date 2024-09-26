@@ -6,7 +6,8 @@
       <p>Tech lead with more than 13 years of experience of which many in leadership roles. With a dedication to practical and efficient solutions as well as a hands on mindset, I am a full‐time problem solver who believes in leadership by example and simplicity by design.</p>
       <h2>Personal information</h2>
       <p><strong>Email:</strong> alexanderh.weber@outlook.com</p>
-      <p><strong>Phone:</strong> (628) 468-3123</p>
+      <p><strong>Business inquiries at:</strong> aw@voidpointergroup.com</p>
+      <!-- <p><strong>Phone:</strong> (628) 468-3123</p> -->
       <p><strong>Website:</strong> <a href="https://replicadse.github.io" target="_blank">replicadse.github.io</a></p>
     </section>
 
